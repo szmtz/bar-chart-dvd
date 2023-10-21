@@ -20,7 +20,9 @@ d3.csv("bog_bodies.csv").then(data => {
 
 // sort the data by total
 
-
+data.sort(function (a,b) {
+    return d3.ascending(a.total, b.total); 
+}); 
 
 // set the x and y scales
 const x = d3.scaleLinear()
@@ -39,7 +41,16 @@ const xAxis = d3.axisBottom(x)
 
 const yAxis = d3.axisLeft(y)
 
-
+// create the bars for the chart
+svg.selectAll(".bar")
+.data(data)
+.enter().append("rect")
+.attr("class", "bar")
+.attr("y", function (d) {return y(d.bog_body_type); })
+.attr("height", y.bandwidth())
+.attr("x", 0)
+.attr("width", function(d) {return x(d.total); })
+.style("fill", 'skyblue')
 
 // Add the x and y axes to the chart
 
@@ -50,6 +61,13 @@ svg.append("g")
 
     svg.append("g")
     .call(yAxis)
+
+
+
+
+
+
+
 })
 
 
