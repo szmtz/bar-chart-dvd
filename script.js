@@ -43,7 +43,12 @@ const yAxis = d3.axisLeft(y)
 
 // Add the x and y axes to the chart
 
-svg.
+svg.append("g")
+    .attr("class", "x axis")
+    .attr("transform", "translate(0, " + height + ")")
+    .call(xAxis)
+
+    
 
 
 
