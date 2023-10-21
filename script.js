@@ -4,7 +4,7 @@ const width = 660 - margin.left - margin.right
 const height = 400 - margin.top - margin.bottom
 
 // create the SVG container for the chart 
-const svg = d3.select("body-chart").append("svg")
+const svg = d3.select("#bog-body-chart").append("svg")
     .attr("width", width + margin.left + margin.right)
     .attr("height", height + margin.top + margin.bottom)
     .append("g")
@@ -13,7 +13,7 @@ const svg = d3.select("body-chart").append("svg")
 
 // load and process the data
 
-d3.csv("bodies.csv").then(data => {
+d3.csv("bog_bodies.csv").then(data => {
     data.forEach(d => {
         d.total = +d.total; 
     }); 
@@ -25,12 +25,12 @@ d3.csv("bodies.csv").then(data => {
 // set the x and y scales
 const x = d3.scaleLinear()
     .range([0, width])
-    .domain([0, d3.max(data, function (d) {return d.total; })]);
+    .domain([0, d3.max(data, function (d) { return d.total; })]);
 
     const y = d3.scaleBand()
         .range([height, 0])
         .padding(0.1)
-        .domain(data.map(function (d) {return d.bog_body_type;}));
+        .domain(data.map(function (d) { return d.bog_body_type; }));
 
 
 // create the x and y axes
@@ -45,16 +45,16 @@ const yAxis = d3.axisLeft(y)
 
 svg.append("g")
     .attr("class", "x axis")
-    .attr("transform", "translate(0, " + height + ")")
+    .attr("transform", "translate(0," + height + ")")
     .call(xAxis)
 
-    
-
-
-
-
+    // svg.append("g")
+    // .call(yAxis)
 
 })
+
+
+
 
 
 
