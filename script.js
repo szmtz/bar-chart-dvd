@@ -97,6 +97,19 @@ svg.append("g")
         }); 
 
 
+//add labels to the end of the bar
+svg.selectAll(".label")
+.data(data)
+.enter().append("text")
+.attr("x", function (d) {return x(d.total) + 5; })
+.attr("y", function (d) {return y(d.languages) + y.bandwidth() / 2; })
+.attr("dy", ".35em")
+.style("font-family", "sans-serif")
+.style("font-size", "10px")
+.style("font-weight", "bold")
+.style("fill", "#3c3d28")
+.text(function (d) {return d.total; }); 
+
 
 
 
