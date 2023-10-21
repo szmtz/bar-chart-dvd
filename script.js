@@ -40,8 +40,12 @@ const x = d3.scaleLinear()
 // create the x and y axes
 
 const xAxis = d3.axisBottom(x)
+    .ticks(5)
+    .tickSize(0); 
 
 const yAxis = d3.axisLeft(y)
+    .tickSize(0)
+    .tickPadding(10); 
 
 // create the bars for the chart
 svg.selectAll(".bar")
