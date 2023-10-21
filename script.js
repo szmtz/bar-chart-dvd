@@ -33,7 +33,17 @@ const x = d3.scaleLinear()
         .domain(data.map(function (d) {return d.bog_body_type;}));
 
 
-// create the x and 
+// create the x and y axes
+
+const xAxis = d3.axisBottom(x)
+
+const yAxis = d3.axisLeft(y)
+
+
+
+// Add the x and y axes to the chart
+
+svg.
 
 
 
