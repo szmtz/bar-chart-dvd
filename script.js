@@ -48,9 +48,8 @@ svg.append("g")
     .attr("transform", "translate(0," + height + ")")
     .call(xAxis)
 
-    // svg.append("g")
-    // .call(yAxis)
-
+    svg.append("g")
+    .call(yAxis)
 })
 
 
