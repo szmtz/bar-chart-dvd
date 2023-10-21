@@ -47,6 +47,23 @@ const yAxis = d3.axisLeft(y)
     .tickSize(0)
     .tickPadding(10); 
 
+//add vertical grid lines
+svg.selectAll("line.vertical-grid")
+.data(x.ticks(5))
+.enter()
+.append("line")
+.attr("class", "vertical-grid")
+.attr("x1", function (d) { return x(d); })
+.attr("y1", 0)
+.attr("x2", function (d) { return x(d); })
+.attr("y2", height)
+.style("stroke", "gray")
+.style("stroke-width", 0.5)
+.style("stroke-dasharray", "3 3"); 
+
+
+
+
 // create the bars for the chart
 svg.selectAll(".bar")
 .data(data)
@@ -62,11 +79,22 @@ svg.selectAll(".bar")
 
 svg.append("g")
     .attr("class", "x axis")
+    .style("font-size", "10px")
     .attr("transform", "translate(0," + height + ")")
     .call(xAxis)
+    .call(g => g.select(".domain").remove()); 
 
     svg.append("g")
+    .attr("class", "y axis")
+    .style("font-size", "8px")
     .call(yAxis)
+    .selectAll('path')
+    .style('stroke-width', '1.75px'); 
+
+    svg.selectAll(".y.axis .tick text")
+        .text(function (d) {
+            return d.toUpperCase(); 
+        }); 
 
 
 
