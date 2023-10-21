@@ -11,4 +11,14 @@ const svg = d3.select("body-chart").append("svg")
     .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
     
 
+// load and process the data
+
+d3.csv("bodies.csv").then(data => {
+    data.forEach(d => {
+        d.total = +d.total; 
+    }); 
+})
+
+
+
 
