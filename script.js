@@ -24,6 +24,8 @@ data.sort(function (a,b) {
     return d3.ascending(a.total, b.total); 
 }); 
 
+
+
 // set the x and y scales
 const x = d3.scaleLinear()
     .range([0, width])
