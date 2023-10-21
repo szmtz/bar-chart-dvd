@@ -17,7 +17,31 @@ d3.csv("bodies.csv").then(data => {
     data.forEach(d => {
         d.total = +d.total; 
     }); 
+
+// sort the data by total
+
+
+
+// set the x and y scales
+const x = d3.scaleLinear()
+    .range([0, width])
+    .domain([0, d3.max(data, function (d) {return d.total; })]);
+
+    const y = d3.scaleBand()
+        .range([height, 0])
+        .padding(0.1)
+        .domain(data.map(function (d) {return d.bog_body_type;}));
+
+
+// create the x and 
+
+
+
+
+
 })
+
+
 
 
 
