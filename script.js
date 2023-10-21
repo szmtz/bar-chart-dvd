@@ -111,9 +111,33 @@ svg.selectAll(".label")
 .text(function (d) {return d.total; }); 
 
 
+// add total label
+svg.append ("text")
+.attr("transform", "translate(" + width / 2 + "," + (height + margin.bottom / 2) + ")")
+.style("text-anchor", "middle")
+.style("font-size", "10px")
+.style("fill", "black")
+.style("font-family", "sans-serif")
+.attr("dy", "1em")
+.text("Total"); 
 
+// Add the chart title
+svg.append("text")
+.attr("x", margin.left - 335)
+.attr("y", margin.top - 110)
+.style("font-size", "14px")
+.style("font-weight", "bold")
+.style("font-family", "sans-serif")
+.text("Top World Languages at Stiles MS");
 
-
+// Add the caption
+svg.append("text")
+.attr("transform", "translate(" + (margin.left - 335) + "," + (height + margin.bottom - 10) + ")")
+.style("text-anchor", "start")
+.style("font-size", "8px")
+.style("fill", "lightgray")
+.style("font-family", "sans-serif")
+.html("<a href='https://sites.google.com/leanderisd.org/worldlanguages-stiles'>Visit a more detailed visualization</a>");
 
 })
 
