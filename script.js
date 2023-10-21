@@ -137,7 +137,7 @@ svg.append("text")
 .style("font-size", "8px")
 .style("fill", "lightgray")
 .style("font-family", "sans-serif")
-.html("<a href='https://sites.google.com/leanderisd.org/worldlanguages-stiles'>Visit a more detailed visualization</a>");
+.html("<a href='https://sites.google.com/leanderisd.org/worldlanguages-stiles'>Click here to see a more detailed visualization</a>");
 
 })
 
