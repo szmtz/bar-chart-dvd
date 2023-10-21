@@ -52,7 +52,7 @@ svg.selectAll(".bar")
 .attr("height", y.bandwidth())
 .attr("x", 0)
 .attr("width", function(d) {return x(d.total); })
-.style("fill", 'skyblue')
+.style("fill", 'limegreen')
 
 // Add the x and y axes to the chart
 
