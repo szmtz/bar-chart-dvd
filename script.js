@@ -34,7 +34,7 @@ const x = d3.scaleLinear()
     const y = d3.scaleBand()
         .range([height, 0])
         .padding(0.1)
-        .domain(data.map(function (d) { return d.bog_body_type; }));
+        .domain(data.map(function (d) { return d.languages; }));
 
 
 // create the x and y axes
@@ -48,7 +48,7 @@ svg.selectAll(".bar")
 .data(data)
 .enter().append("rect")
 .attr("class", "bar")
-.attr("y", function (d) {return y(d.bog_body_type); })
+.attr("y", function (d) {return y(d.languages); })
 .attr("height", y.bandwidth())
 .attr("x", 0)
 .attr("width", function(d) {return x(d.total); })
